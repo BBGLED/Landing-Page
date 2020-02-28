@@ -1,6 +1,7 @@
 package main
 
 import (
+        "fmt"
         "github.com/joho/godotenv"
         "log"
         "net/http"
@@ -19,5 +20,7 @@ func main() {
         PORT := os.Getenv("PORT")
 
         http.Handle("/", http.FileServer(http.Dir("./public")))
+
+        fmt.Sprintf("App running on port %s!", PORT)
         http.ListenAndServe(PORT, nil)
 }
