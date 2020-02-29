@@ -34,7 +34,7 @@
   unused-packages = true
 
 [metadata.heroku]
-  root-package = "github.com/glendaleacosta/landing-page"
+  root-package = "landing-page"
   go-version = "1.3.0"
-  install = [ "./vendor/" ]
+  install = ["./..."]
   ensure = "true"
