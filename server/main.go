@@ -16,11 +16,12 @@ func LoadEnv() {
 }
 
 func main() {
+        fmt.Println("RUNNING MAIN, WOO")
         LoadEnv()
         PORT := os.Getenv("PORT")
-        fmt.Sprintf("TESTING PORT ON HEROKU: %s!", PORT)
+        fmt.Printf("TESTING PORT ON HEROKU: %s!", PORT)
         http.Handle("/", http.FileServer(http.Dir("./public")))
 
-        fmt.Sprintf("App running on port %s!", PORT)
+        fmt.Printf("App running on port %s!", PORT)
         http.ListenAndServe(PORT, nil)
 }
