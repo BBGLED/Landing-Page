@@ -18,7 +18,7 @@ func LoadEnv() {
 func main() {
         LoadEnv()
         PORT := os.Getenv("PORT")
-
+        fmt.Sprintf("TESTING PORT ON HEROKU: %s!", PORT)
         http.Handle("/", http.FileServer(http.Dir("./public")))
 
         fmt.Sprintf("App running on port %s!", PORT)
