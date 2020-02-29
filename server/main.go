@@ -21,5 +21,5 @@ func main() {
         http.Handle("/", http.FileServer(http.Dir("./public")))
 
         fmt.Printf("App running on port %s!", PORT)
-        http.ListenAndServe(PORT, nil)
+        http.ListenAndServe(":"+PORT, nil)
 }
